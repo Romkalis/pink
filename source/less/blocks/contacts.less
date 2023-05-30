@@ -1,0 +1,129 @@
+.contacts {
+  display: flex;
+}
+
+.contacts__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacts__title {
+  .font-light;
+  font-size: 24px;
+}
+
+.contacts__list {
+  .indent0;
+  display: grid;
+  list-style: none;
+  margin-bottom: 41px;
+
+  @media (min-width: @tablet-width) {
+    grid-template-areas:
+      "a a b b"
+      "c c c c";
+
+
+    .contacts-phone {
+      grid-area: a;
+    }
+
+    .contacts-email {
+      grid-area: b;
+    }
+
+    .contacts-address {
+      grid-area: c;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 940px;
+    grid-template-areas: "a a b b c c";
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 21px;
+  }
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.contacts__text {
+  .indent0;
+  .font-bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.contacts__link {
+  .indent0;
+  display: inline-block;
+  .font-light;
+  font-size: 24px;
+  color: #d22856;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.contact__geo {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 200px;
+  background-image: url("/img/mobile/map.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media (min-width: @tablet-width) {
+    background-image: url("/img/tablet/map.png");
+    min-width: 660px;
+    min-height: 374px;
+    // max-width: 1070px;
+  }
+
+  @media (min-width: @desktop-width) {
+    background-image: url("/img/desktop/map.png");
+    min-width: 1200px;
+    min-height: 502px;
+    max-width: 2000px;
+  }
+}
+
+.contact__geo::before {
+  top: -60px;
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 600px solid #ffffff;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-width: 0;
+  border-top-width: 123px;
+  z-index: 1;
+
+  @media (min-width: @tablet-width) {
+    top: -33px;
+  }
+
+  @media (min-width: @desktop-width) {
+    top: -23px;
+    border: 720px solid #ffffff;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-width: 0;
+    border-top-width: 123px;
+  }
+}
